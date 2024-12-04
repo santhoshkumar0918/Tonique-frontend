@@ -1,7 +1,47 @@
 import Image from "next/image";
 import Header from "@/components/Header";
+import { useState } from "react";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/16/solid";
 
 export default function Home() {
+  const slides = [
+    {
+      image: '/images/date4.png',
+      title: 'Hannah Met Her Now-Husband on Bumble.',
+      description: 'A Few Months Later, She Met One of Her Bridesmaids There, Too',
+    },
+    {
+      image: '/images/date4.png',
+      title: 'Slide 2 Title',
+      description: 'Slide 2 Description',
+    },
+    {
+      image: '/images/date4.png',
+      title: 'Slide 3 Title',
+      description: 'Slide 3 Description',
+    },
+    {
+      image: '/images/date4.png',
+      title: 'Slide 4 Title',
+      description: 'Slide 4 Description',
+    },
+    {
+      image: '/images/date4.png',
+      title: 'Slide 5 Title',
+      description: 'Slide 5 Description',
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? slides.length - 1 : prevIndex - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === slides.length - 1 ? 0 : prevIndex + 1));
+  };
+
   return (
     <div className="w-full">
       {/* Header */}
@@ -130,47 +170,87 @@ export default function Home() {
 
 
         {/* Section 4 */}
-        <section className="w-full h-screen relative flex items-center justify-center bg-red-500">
-          <div className="absolute inset-0">
-            <Image
-              src="/images/datehome.png"
-              alt="Chat and Connect"
-              layout="fill"
-              objectFit="cover"
-              className="opacity-70"
-            />
-          </div>
-          <div className="relative z-10 text-center text-white">
-            <h2 className="text-4xl font-bold">Chat and Connect</h2>
-            <p className="text-lg mt-4">
-              Start meaningful conversations and get to know each other.
-            </p>
-          </div>
-        </section>
+        <section className="w-full h-screen flex items-center justify-center bg-yellow-500">
+  {/* Left Side: Image */}
+  <div className="w-1/2 h-full flex items-center justify-center">
+    <div className="relative w-3/4 h-3/4">
+      <Image
+        src="/images/date3.png"
+        alt="Date and Connect"
+        layout="fill"
+        objectFit="cover"
+        className="rounded-lg"
+      />
+    </div>
+  </div>
+
+  {/* Right Side: Text Content */}
+  <div className="w-1/2 h-full flex flex-col justify-center items-start px-10">
+    <h2 className="text-5xl font-bold text-black">MAKE THE FIRST MOVE™</h2>
+    <p className="text-lg mt-4 text-black">
+      We’re the only app that makes dating better by putting women’s experiences first. Because when things are better for women, they’re better for everyone.
+    </p>
+    <button className="mt-6 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800">
+      About Bumble
+    </button>
+  </div>
+</section>
+
 
         {/* Section 5 */}
-        <section className="w-full h-screen relative flex items-center justify-center bg-purple-500">
-          <div className="absolute inset-0">
+        <section className="w-full h-screen bg-yellow-500 flex flex-col items-center justify-center">
+      <h2 className="text-5xl font-bold text-center mb-6">
+        IF IT WORKED FOR THEM, <br /> IT COULD WORK FOR YOU
+      </h2>
+
+      <div className="relative w-3/4 flex items-center justify-center">
+        {/* Left Arrow */}
+        <button
+          onClick={handlePrev}
+          className="absolute left-4 bg-black text-white rounded-full p-3 hover:bg-gray-800"
+        >
+          <ChevronLeftIcon className="w-6 h-6" />
+        </button>
+
+        {/* Image and Content */}
+        <div className="flex items-center justify-center w-full bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="w-1/2">
             <Image
-              src="/images/datehome.png"
-              alt="Join Us Today"
-              layout="fill"
+              src={slides[currentIndex].image}
+              alt={slides[currentIndex].title}
+              width={500}
+              height={500}
               objectFit="cover"
-              className="opacity-70"
             />
           </div>
-          <div className="relative z-10 text-center text-white">
-            <h2 className="text-4xl font-bold">Get Started Today</h2>
-            <p className="text-lg mt-4">
-              Don’t wait any longer. Take the first step towards your happiness.
-            </p>
-            <button className="mt-6 px-6 py-3 bg-white text-black font-medium rounded-lg">
-              Join Now
-            </button>
+          <div className="w-1/2 p-8">
+            <h3 className="text-3xl font-bold mb-4">{slides[currentIndex].title}</h3>
+            <p className="text-lg text-gray-700">{slides[currentIndex].description}</p>
           </div>
-        </section>
-      </main>
+        </div>
 
+        {/* Right Arrow */}
+        <button
+          onClick={handleNext}
+          className="absolute right-4 bg-black text-white rounded-full p-3 hover:bg-gray-800"
+        >
+          <ChevronRightIcon className="w-6 h-6" />
+        </button>
+      </div>
+
+      {/* Pagination Dots */}
+      <div className="mt-6 flex space-x-2">
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            className={`w-3 h-3 rounded-full ${
+              index === currentIndex ? 'bg-black' : 'bg-gray-300'
+            }`}
+          ></div>
+        ))}
+      </div>
+    </section>
+    </main>
       {/* Footer */}
       <footer className="w-full bg-gray-800 text-white py-6">
         <div className="container mx-auto text-center">
