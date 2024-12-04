@@ -55,9 +55,9 @@ export default function Home() {
       <Header />
 
       {/* Main Sections */}
-      <main>
+      <main className="px-5">
         {/* Section 1 */}
-        <section className="w-full h-screen relative flex items-center justify-center">
+        <section className="w-full h-screen relative flex items-center justify-center max-w-screen-xl mx-auto">
           <div className="absolute inset-0">
             <Image
               src="/images/date.png"
@@ -75,7 +75,7 @@ export default function Home() {
         </section>
 
         {/* Section 2 */}
-        <section className="w-full h-screen flex items-center bg-yellow-500">
+        <section className="w-full h-screen flex items-center bg-yellow-500 max-w-screen-xl mx-auto">
           {/* Left Content */}
           <div className="flex-1 flex flex-col justify-center px-10">
             <h2 className="text-5xl font-bold text-black">
@@ -104,7 +104,7 @@ export default function Home() {
         </section>
 
         {/* Section 3 */}
-        <section className="w-full py-16 min-h-screen bg-white">
+        <section className="w-full py-16 min-h-screen bg-white max-w-screen-xl mx-auto">
           {/* Heading */}
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-black">
@@ -179,7 +179,7 @@ export default function Home() {
         </section>
 
         {/* Section 4 */}
-        <section className="w-full h-screen flex items-center justify-center bg-yellow-500">
+        <section className="w-full h-screen flex items-center justify-center bg-yellow-500 max-w-screen-xl mx-auto">
           <div className="w-1/2 h-full flex items-center justify-center">
             <div className="relative w-3/4 h-3/4">
               <Image
@@ -206,7 +206,7 @@ export default function Home() {
         </section>
 
         {/* Section 5 */}
-        <section className="w-full h-screen bg-orange-500 flex flex-col items-center justify-center">
+        <section className="w-full h-screen bg-orange-500 flex flex-col items-center justify-center max-w-screen-xl mx-auto">
           <h2 className="text-5xl font-bold text-center mb-6">
             IF IT WORKED FOR THEM, <br /> IT COULD WORK FOR YOU
           </h2>
@@ -250,8 +250,8 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Pagination Dots */}
-          <div className="mt-6 flex space-x-2">
+          {/* Dots */}
+          <div className="flex justify-center mt-6 space-x-2">
             {slides.map((_, index) => (
               <div
                 key={index}
@@ -266,4 +266,3 @@ export default function Home() {
     </div>
   );
 }
-  
