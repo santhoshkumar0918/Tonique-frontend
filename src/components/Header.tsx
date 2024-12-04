@@ -25,7 +25,7 @@ export default function Header() {
     <>
       <header className="fixed top-0 left-0 w-full h-[11vh] bg-white shadow-md z-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-full">
-        <div className="flex items-center">
+          <div className="flex items-center">
             <Link href="/" className="hover:opacity-80 transition flex items-center">
               <Image
                 src="/images/datehome.png"
@@ -55,28 +55,36 @@ export default function Header() {
               >
                 The App
               </button>
-              {dropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 shadow-md rounded-md">
-                  <Link
-                    href="/app/date"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              <AnimatePresence>
+                {dropdownOpen && (
+                  <motion.div
+                    className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 shadow-md rounded-md"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    Bumble Date
-                  </Link>
-                  <Link
-                    href="/app/bff"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Bumble BFF
-                  </Link>
-                  <Link
-                    href="/app/bizz"
-                    className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-                  >
-                    Bumble Bizz
-                  </Link>
-                </div>
-              )}
+                    <Link
+                      href="/app/date"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Bumble Date
+                    </Link>
+                    <Link
+                      href="/app/bff"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Bumble BFF
+                    </Link>
+                    <Link
+                      href="/app/bizz"
+                      className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                    >
+                      Bumble Bizz
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <Link
