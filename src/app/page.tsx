@@ -263,6 +263,74 @@ export default function Home() {
           </div>
         </section>
       </main>
+
+      {/* Footer */}
+<footer className="w-full bg-gray-200 max-w-screen-xl mx-auto text-gray-800 py-12">
+  <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-6">
+    {/* Column 1: Company Info */}
+    <div>
+      <h3 className="text-xl font-bold mb-4">Your Dating App</h3>
+      <p className="text-gray-600">
+        Discover meaningful connections and build lasting relationships. Join us and experience a new way of dating.
+      </p>
+    </div>
+
+    {/* Column 2: Navigation */}
+    <div>
+      <h3 className="text-xl font-bold mb-4">Quick Links</h3>
+      <ul className="space-y-2">
+        <li><a href="#" className="hover:text-black transition">About Us</a></li>
+        <li><a href="#" className="hover:text-black transition">Careers</a></li>
+        <li><a href="#" className="hover:text-black transition">Privacy Policy</a></li>
+        <li><a href="#" className="hover:text-black transition">Terms of Service</a></li>
+      </ul>
+    </div>
+
+    {/* Column 3: Social Media */}
+    <div>
+      <h3 className="text-xl font-bold mb-4">Follow Us</h3>
+      <div className="flex space-x-4">
+        <a href="#" className="text-gray-600 hover:text-black">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 4.56c-.88.4-1.83.67-2.83.79a4.92 4.92 0 0 0 2.16-2.72c-.95.56-2.01.95-3.13 1.16a4.9 4.9 0 0 0-8.36 4.47A13.92 13.92 0 0 1 1.64 3.16a4.9 4.9 0 0 0 1.52 6.55 4.86 4.86 0 0 1-2.22-.61v.06a4.92 4.92 0 0 0 3.95 4.81 4.9 4.9 0 0 1-2.21.08 4.92 4.92 0 0 0 4.59 3.42A9.86 9.86 0 0 1 0 21.54a13.92 13.92 0 0 0 7.54 2.21c9.05 0 14-7.5 14-14v-.64a9.92 9.92 0 0 0 2.46-2.53z" />
+          </svg>
+        </a>
+        <a href="#" className="text-gray-600 hover:text-black">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.16c-5.45 0-9.84 4.39-9.84 9.84 0 4.35 3.2 7.95 7.36 8.68v-6.13h-2.21v-2.55h2.21V8.91c0-2.19 1.33-3.41 3.35-3.41.97 0 1.97.17 1.97.17v2.17h-1.11c-1.09 0-1.43.67-1.43 1.37v1.66h2.54l-.41 2.55h-2.13v6.13c4.16-.73 7.36-4.33 7.36-8.68 0-5.45-4.39-9.84-9.84-9.84z" />
+          </svg>
+        </a>
+        <a href="#" className="text-gray-600 hover:text-black">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.16c-5.45 0-9.84 4.39-9.84 9.84 0 4.35 3.2 7.95 7.36 8.68v-6.13h-2.21v-2.55h2.21V8.91c0-2.19 1.33-3.41 3.35-3.41.97 0 1.97.17 1.97.17v2.17h-1.11c-1.09 0-1.43.67-1.43 1.37v1.66h2.54l-.41 2.55h-2.13v6.13c4.16-.73 7.36-4.33 7.36-8.68 0-5.45-4.39-9.84-9.84-9.84z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    {/* Column 4: Newsletter */}
+    <div>
+      <h3 className="text-xl font-bold mb-4">Stay Updated</h3>
+      <form>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none"
+        />
+        <button
+          type="submit"
+          className="w-full bg-black text-white mt-4 py-3 rounded-lg hover:bg-gray-800 transition"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div className="mt-8 border-t border-gray-300 pt-6 text-center">
+    <p>© 2024 Your Dating App. All Rights Reserved.</p>
+  </div>
+</footer>
     </div>
   );
 }
